@@ -1,5 +1,6 @@
 import json
 import os
+from urllib.parse import urlparse
 
 # Open the input file and load the data
 with open('typescript_cve.json', 'r') as f:
@@ -39,7 +40,12 @@ for item in data:
     # Extract the common part of the URLs in the references field
     if 'references' in item:
         common_path = os.path.commonprefix(item['references'])
-        new_item['references'] = common_path
+        parsed_url = urlparse(common_path)
+        base_path = '/'.join(parsed_url.path.split('/')[:3])
+        repo_url = f"{parsed_url.scheme}://{parsed_url.netloc}{base_path}"
+        new_item['repo_url'] = repo_url
+        new_item['reference'] = common_path
+
 
     output_data.append(new_item)
 
