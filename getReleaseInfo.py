@@ -16,7 +16,7 @@ if response.status_code == 200:
 
     # Print information for each release
     for release in data:
-        if release['tag_name'] == 'v10.0.4':
+        if release['tag_name'] != 'v':
             print('Name:', release['name'])
             #print('Published at:', release['published_at'])
             #print('Description:', release['body'])
