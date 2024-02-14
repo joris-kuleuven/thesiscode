@@ -3,7 +3,7 @@ import os
 from urllib.parse import urlparse
 
 # Open the input file and load the data
-with open('typescript_cve.json', 'r') as f:
+with open('phpCVEs.json', 'r') as f:
     data = json.load(f)
 
 # Prepare the output data
@@ -69,5 +69,5 @@ for item in data:
     output_data.append(new_item)
 
 # Write the output data to the output file
-with open('typescript_bv.json', 'w') as f:
+with open('phpCVEs_bv.json', 'w') as f:
     json.dump(output_data, f, indent=4)

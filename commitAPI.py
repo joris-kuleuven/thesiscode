@@ -3,10 +3,10 @@ import requests
 from tqdm import tqdm
 
 # Your GitHub token
-token = "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"
+token = "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"
 
 # Open the input file and load the data
-with open('typescript_bv.json', 'r') as f:
+with open('phpCVEs_bv.json', 'r') as f:
     data = json.load(f)
 
 # Set the headers for the API request
@@ -49,5 +49,5 @@ for item in tqdm(data):
     output_data.append(new_item)
 
 # Save the output data to a new JSON file
-with open('bv_extended.json', 'w') as f:
+with open('bv_extendedPHP.json', 'w') as f:
     json.dump(output_data, f, indent=4)
