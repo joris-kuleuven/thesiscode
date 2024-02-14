@@ -2,12 +2,12 @@
 from github import Github
 # Authentication is defined via github.Auth
 from github import Auth
-
+from config import githubToken
 # using an access token
-auth = Auth.Token("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")
+
 
 # Public Web Github
-g = Github(auth=auth)
+g = Github(githubToken)
 
 repo_url = "PyGithub/PyGithub"
 def getMilestones():

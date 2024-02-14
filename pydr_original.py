@@ -1,7 +1,7 @@
 
 from pydriller import Repository
 
-for commit in Repository('https://github.com/twisted/treq').traverse_commits():
+for commit in Repository('https://github.com/pimcore/pimcore').traverse_commits():
     print(commit.hash)
     print(commit.msg)
     print(commit.author.name)
